@@ -1,0 +1,263 @@
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.25;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+// Variables
+$violet: #652d92;
+$light-violet: #844fbb;
+$dark-violet: #5a1882;
+$white: #ffffff;
+$orange: #d56f21;
+$gray: #413a4a;
+
+
+
+// Fonts
+@font-face {
+    font-family: 'Karla';
+    src: url('./fonts/Karla-VariableFont_wght.ttf') format('truetype'),
+        url('./fonts/Karla-VariableFont_wght.woff') format('woff'),
+        url('./fonts/Karla-VariableFont_wght.woff2') format('woff2');
+}
+
+
+body {
+    background-image: url(./images/bg.webp);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 87%;
+    max-width: 39.7rem;
+    background-color: $white;
+    border-radius: 0.4rem;
+    margin: 4.5rem auto;
+
+    @media (min-width: 38.8rem) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 1.75rem 1.5rem 2rem;
+
+        @media (min-width: 38.8rem) {
+            grid-column: 1 / span 2;
+            padding: 2.45rem 2.5rem 2.31rem;
+        }
+
+        .content__title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $dark-violet;
+            margin-bottom: 1.5rem;
+
+            @media (min-width: 38.8rem) {
+                font-size: 1.5rem;
+            }
+        }
+
+        .content__undertitle {
+            font-size: 1rem;
+            color: $orange;
+            margin-bottom: 1.25rem;
+
+            @media (min-width: 38.8rem) {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .content__text {
+            font-size: 0.9rem;
+            color: $gray;
+
+            @media (min-width: 38.8rem) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__subscription {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.5rem;
+        color: $white;
+        background-color: $violet;
+
+        @media (min-width: 38.8rem) {
+            padding: 2.5rem 2.5rem 2.46rem;
+            border-radius: 0 0 0 0.4rem;
+        }
+        
+        .subscription__title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .subscription__price {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+
+            .price__amount {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .price__period {
+                font-weight: 300;
+            }
+        }
+        
+        .subscription__text {
+            margin-bottom: 1.75rem;
+
+            @media (min-width: 38.8rem) {
+                margin-bottom: 1.7rem;
+            }
+        }
+
+        .subscription__button {
+            padding: 0.85rem;
+            border: none;
+            border-radius: 0.4rem;
+            font-weight: 700;
+            color: $white;
+            background-color: $orange;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $white;
+                color: $orange;
+            }
+        }
+    }
+
+    &__whyus {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1.5rem;
+        color: $white;
+        background-color: $light-violet;
+        border-radius: 0 0 0.4rem 0.4rem;
+
+        @media (min-width: 38.8rem) {
+            padding: 2.5rem 2.5rem 2.46rem;
+            border-radius: 0 0 0.4rem 0;
+        }
+
+        .whyus__title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .whyus__list {
+            list-style-type: none;
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.5;
+            padding-left: 0;
+            margin: 0;
+
+            @media (min-width: 38.8rem) {
+                line-height: 1.5;
+            }
+
+            & li {
+                position: relative;
+                padding-left: 20px; 
+              
+                &::before {
+                content: "✔"; 
+                position: absolute;
+                left: 0;
+                color: $orange;
+                font-size: 0.9rem;
+              }
+            }
+        }
+    }
+}
+
+footer {
+    display: none;
+}
+
+
+

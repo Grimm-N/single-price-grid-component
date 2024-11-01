@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.25;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("./fonts/Karla-VariableFont_wght.ttf") format("truetype"), url("./fonts/Karla-VariableFont_wght.woff") format("woff"), url("./fonts/Karla-VariableFont_wght.woff2") format("woff2");
+}
+body {
+  background-image: url(./images/bg.webp);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 87%;
+  max-width: 39.7rem;
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+  margin: 4.5rem auto;
+}
+@media (min-width: 38.8rem) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem 2rem;
+}
+@media (min-width: 38.8rem) {
+  .card__content {
+    grid-column: 1/span 2;
+    padding: 2.45rem 2.5rem 2.31rem;
+  }
+}
+.card__content .content__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #5a1882;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 38.8rem) {
+  .card__content .content__title {
+    font-size: 1.5rem;
+  }
+}
+.card__content .content__undertitle {
+  font-size: 1rem;
+  color: #d56f21;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 38.8rem) {
+  .card__content .content__undertitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.card__content .content__text {
+  font-size: 0.9rem;
+  color: #413a4a;
+}
+@media (min-width: 38.8rem) {
+  .card__content .content__text {
+    font-size: 1rem;
+  }
+}
+.card__subscription {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem;
+  color: #ffffff;
+  background-color: #652d92;
+}
+@media (min-width: 38.8rem) {
+  .card__subscription {
+    padding: 2.5rem 2.5rem 2.46rem;
+    border-radius: 0 0 0 0.4rem;
+  }
+}
+.card__subscription .subscription__title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.card__subscription .subscription__price {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.card__subscription .subscription__price .price__amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.card__subscription .subscription__price .price__period {
+  font-weight: 300;
+}
+.card__subscription .subscription__text {
+  margin-bottom: 1.75rem;
+}
+@media (min-width: 38.8rem) {
+  .card__subscription .subscription__text {
+    margin-bottom: 1.7rem;
+  }
+}
+.card__subscription .subscription__button {
+  padding: 0.85rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #d56f21;
+  transition: all 0.3s ease;
+}
+.card__subscription .subscription__button:hover {
+  background-color: #ffffff;
+  color: #d56f21;
+}
+.card__whyus {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem;
+  color: #ffffff;
+  background-color: #844fbb;
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+@media (min-width: 38.8rem) {
+  .card__whyus {
+    padding: 2.5rem 2.5rem 2.46rem;
+    border-radius: 0 0 0.4rem 0;
+  }
+}
+.card__whyus .whyus__title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.card__whyus .whyus__list {
+  list-style-type: none;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.5;
+  padding-left: 0;
+  margin: 0;
+}
+@media (min-width: 38.8rem) {
+  .card__whyus .whyus__list {
+    line-height: 1.5;
+  }
+}
+.card__whyus .whyus__list li {
+  position: relative;
+  padding-left: 20px;
+}
+.card__whyus .whyus__list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #d56f21;
+  font-size: 0.9rem;
+}
+
+footer {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
